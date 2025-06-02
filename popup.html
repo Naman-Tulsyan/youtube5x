@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Speed Controller</title>
+  <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #333;
+      --accent: #4285f4;
+      --button-bg: #4285f4;
+      --button-text: #fff;
+      --button-hover: #3367d6;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1e1e1e;
+        --text: #f0f0f0;
+        --accent: #8ab4f8;
+        --button-bg: #2c2c2c;
+        --button-text: #f0f0f0;
+        --button-hover: #444;
+      }
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      text-align: center;
+      background-color: var(--bg);
+      color: var(--text);
+      width: 280px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+      margin-bottom: 20px;
+    }
+
+    .buttons button {
+      padding: 6px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 6px;
+      border: none;
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      transition: background-color 0.2s;
+    }
+
+    .buttons button:hover {
+      background-color: var(--button-hover);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin: 10px 0;
+      accent-color: var(--accent);
+    }
+
+    .speed-display {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .instructions {
+      text-align: left;
+      font-size: 12px;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: rgba(0,0,0,0.05);
+      border-radius: 6px;
+      color: var(--text);
+    }
+
+    .instructions strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--accent);
+    }
+
+    .credit {
+      font-size: 10px;
+      color: #888;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Playback Speed</h2>
+
+  <div class="buttons">
+    <button data-rate="0.5">0.5x</button>
+    <button data-rate="1">1x</button>
+    <button data-rate="2">2x</button>
+    <button data-rate="3">3x</button>
+    <button data-rate="4">4x</button>
+    <button data-rate="5">5x</button>
+  </div>
+
+  <input type="range" id="speedSlider" min="0.25" max="5" step="0.1" value="1">
+  <div class="speed-display">1x</div>
+
+  <div class="instructions">
+    <strong>How to Use:</strong>
+     &bull; Click a button or move the slider to change playback speed.<br>
+     &bull; Keyboard Shortcuts:<br>
+    &nbsp;&nbsp;- Up or Right Arrow: Increase speed by 0.1x<br>
+    &nbsp;&nbsp;- Down or Left Arrow: Decrease speed by 0.1x<br>
+    &nbsp;&nbsp;- 0: Reset speed to 1x<br>
+     &bull; Works on all videos in the active tab.
+  </div>
+
+  <div class="credit">Made by Naman</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
