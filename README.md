@@ -44,7 +44,7 @@ git clone https://github.com/Naman-Tulsyan/youtube5x.git
 
 ## Screenshot
 
-<img src="ss.png" alt="screenshot" >
+![Screenshot](ss.png)
 
 ---
 
